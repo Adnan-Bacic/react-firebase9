@@ -1,22 +1,21 @@
-import logo from './logo.svg';
 import './App.css';
+import AddBook from './components/AddBook';
+import Auth from './components/Auth';
+import Books from './components/Books';
+import BooksRealtime from './components/BooksRealtime';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <div className='container-auth'>
+          <Auth></Auth>
+        </div>
+        <div className='container-books'>
+          <AddBook></AddBook>
+          <Books></Books>
+          <BooksRealtime></BooksRealtime>
+        </div>
       </header>
     </div>
   );

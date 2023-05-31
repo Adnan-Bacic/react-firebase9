@@ -1,0 +1,20 @@
+.books {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 90%;
+    margin-bottom: 50px;
+}
+
+.book {
+    border-style: solid;
+    border-width: 5px;
+    border-color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.container-add-book {
+    margin-bottom: 50px;
+}
