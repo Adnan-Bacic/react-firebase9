@@ -33,16 +33,16 @@ const useCollectionRealtime = () => {
     }
 
     const useGetAllWhere = () => {
-        const user = getAuth()
+        const auth = getAuth()
 
         useEffect(() => {
             const get = async () => {
-                if (user?.currentUser?.uid === undefined) {
+                if (auth?.currentUser?.uid === undefined) {
                     return
                 }
                 const colRef = collection(db, 'books')
 
-                const q = query(colRef, where('userUid', '==', user.currentUser.uid))
+                const q = query(colRef, where('userUid', '==', auth.currentUser.uid))
 
                 const unsub = onSnapshot(q, (snapshot) => {
                     const docs = []
@@ -61,7 +61,7 @@ const useCollectionRealtime = () => {
             }
 
             get()
-        }, [user?.currentUser?.uid])
+        }, [auth?.currentUser?.uid])
     }
 
     return {

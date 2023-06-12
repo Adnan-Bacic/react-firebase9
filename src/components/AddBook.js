@@ -10,7 +10,7 @@ const AddBook = () => {
         author: ''
     })
 
-    const user = getAuth()
+    const auth = getAuth()
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -31,7 +31,7 @@ const AddBook = () => {
             title: values.title,
             author: values.author,
             isFav: false,
-            userUid: user.currentUser.uid
+            userUid: auth.currentUser.uid
         })
     }
     return (
