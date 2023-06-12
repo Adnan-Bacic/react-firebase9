@@ -51,6 +51,33 @@ const Auth = () => {
                 <>
                 <h2>Signed in</h2>
                 <p>email: {user.authUser.email}</p>
+
+                    <h2>Info:</h2>
+                    {user.authUser.providerData.map((profile) => {
+                        console.log(profile);
+                        return(
+                            <div key={profile.uid}>
+                            <p>
+                                providerId: {profile.providerId}
+                            </p>
+                            <p>
+                                uid: {profile.uid}
+                            </p>
+                            <p>
+                                displayName: {profile.displayName}
+                            </p>
+                            <p>
+                                email: {profile.email}
+                            </p>
+                            <p>
+                                photoURL: {profile.photoURL}
+                            </p>
+                            <p>
+                                phoneNumber: {profile.phoneNumber}
+                            </p>
+                            </div>
+                        )
+                    })}
                 </>
             )}
             <button onClick={logOut}>signout</button>
