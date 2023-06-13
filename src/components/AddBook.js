@@ -40,10 +40,10 @@ const AddBook = () => {
                 <h3>Add a New Book</h3>
 
                 <label htmlFor="title">Book title:</label>
-                <input type="text" name="title" onChange={handleInputChange} required />
+                <input type="text" name="title" id='title' onChange={handleInputChange} required />
 
                 <label htmlFor="author">Book author:</label>
-                <input type="text" name="author" onChange={handleInputChange} required />
+                <input type="text" name="author" id='author' onChange={handleInputChange} required />
                 <button>Add Book</button>
             </form>
         </div>

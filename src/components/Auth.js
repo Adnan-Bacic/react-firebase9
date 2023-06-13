@@ -54,7 +54,6 @@ const Auth = () => {
 
                     <h2>Info:</h2>
                     {user.authUser.providerData.map((profile) => {
-                        console.log(profile);
                         return(
                             <div key={profile.uid}>
                             <p>
@@ -83,21 +82,21 @@ const Auth = () => {
             <button onClick={logOut}>signout</button>
             <form onSubmit={handleSignup}>
                 <h2>Signup</h2>
-                <label htmlFor="email">Email:</label>
-                <input type="email" name="email" onChange={handleInputChange} required />
+                <label htmlFor="email-signup">Email:</label>
+                <input type="email" name="email" id='email-signup' onChange={handleInputChange} required />
 
-                <label htmlFor="password">Password:</label>
-                <input type="password" name="password" onChange={handleInputChange} required />
+                <label htmlFor="password-signup">Password:</label>
+                <input type="password" name="password" id='password-signup' onChange={handleInputChange} required />
 
                 <button>Signup</button>
             </form>
             <form onSubmit={handleLogin}>
             <h2>Login</h2>
-            <label htmlFor="email">Email:</label>
-                <input type="email" name="email" onChange={handleInputChange} required />
+            <label htmlFor="email-login">Email:</label>
+                <input type="email" name="email" id='email-login' onChange={handleInputChange} required />
 
-                    <label htmlFor="password">Password:</label>
-                <input type="password" name="password" onChange={handleInputChange} required />
+                    <label htmlFor="password-login">Password:</label>
+                <input type="password" name="password" id='password-login' onChange={handleInputChange} required />
 
                     <button>Login</button>
             </form>

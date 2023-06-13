@@ -4,12 +4,13 @@
   display: flex;
   font-size: calc(10px + 2vmin);
   color: white;
+  justify-content: space-between;
 }
 
 .container-auth {
-  display: flex;
+  width: 30%;
 }
 
 .container-books {
-  width: 70%;
+  width: 65%;
 }
