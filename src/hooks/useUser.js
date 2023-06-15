@@ -10,14 +10,17 @@ const useUser = () => {
     useEffect(() => {
         //auth changes
         onAuthStateChanged(auth, (currentAuthUser) => {
-            console.log('cau', currentAuthUser)
             setAuthUser(currentAuthUser)
         })
     }, [auth])
 
     const signOutUser = () => {
         const auth = getAuth()
-        signOut(auth)
+        try {
+            signOut(auth)
+        } catch (e) {
+            console.log(e);
+        }
     }
 
     return {
