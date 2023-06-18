@@ -16,7 +16,6 @@ const useSignup = () => {
 
             setError(null)
         } catch (err) {
-            console.log(err.message)
             setError(err.message)
         }
     }

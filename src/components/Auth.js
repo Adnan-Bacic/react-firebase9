@@ -89,7 +89,11 @@ const Auth = () => {
                 <input type="password" name="password" id='password-signup' onChange={handleInputChange} required />
 
                 <button>Signup</button>
+                {signup.error && (
+                    <p>{signup.error}</p>
+                )}
             </form>
+            
             <form onSubmit={handleLogin}>
             <h2>Login</h2>
             <label htmlFor="email-login">Email:</label>
@@ -98,7 +102,10 @@ const Auth = () => {
                     <label htmlFor="password-login">Password:</label>
                 <input type="password" name="password" id='password-login' onChange={handleInputChange} required />
 
-                    <button>Login</button>
+                <button>Login</button>
+                {login.error && (
+                    <p>{login.error}</p>
+                )}
             </form>
         </div>
     );
