@@ -9,9 +9,13 @@ const useUser = () => {
 
     useEffect(() => {
         //auth changes
-        onAuthStateChanged(auth, (currentAuthUser) => {
+        const unsub = onAuthStateChanged(auth, (currentAuthUser) => {
             setAuthUser(currentAuthUser)
         })
+
+        return () => {
+            unsub();
+        }
     }, [auth])
 
     const signOutUser = () => {
