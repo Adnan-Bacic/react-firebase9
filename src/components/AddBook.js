@@ -34,6 +34,13 @@ const AddBook = () => {
             userUid: auth.currentUser.uid
         })
     }
+
+    if(auth.currentUser === null){
+        return(
+            <p>you must be logged in to create books</p>
+        )
+    }
+
     return (
         <div className='container-add-book'>
             <form onSubmit={handleSubmit}>
