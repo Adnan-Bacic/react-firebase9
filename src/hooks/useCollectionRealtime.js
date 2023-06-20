@@ -37,9 +37,10 @@ const useCollectionRealtime = () => {
 
         useEffect(() => {
             const get = async () => {
-                if (auth?.currentUser?.uid === undefined) {
+                if (auth.currentUser === null) {
                     return
                 }
+                
                 const colRef = collection(db, 'books')
 
                 const q = query(colRef, where('userUid', '==', auth.currentUser.uid))
@@ -61,7 +62,7 @@ const useCollectionRealtime = () => {
             }
 
             get()
-        }, [auth?.currentUser?.uid])
+        }, [auth.currentUser])
     }
 
     return {

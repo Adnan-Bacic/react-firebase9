@@ -35,7 +35,7 @@ const useCollection = () => {
 
         useEffect(() => {
             const get = async () => {
-                if (auth?.currentUser?.uid === undefined){
+                if (auth.currentUser === null){
                     return
                 }
 
@@ -58,7 +58,7 @@ const useCollection = () => {
             }
 
             get()
-        }, [auth?.currentUser?.uid])
+        }, [auth.currentUser])
     }
 
     return {

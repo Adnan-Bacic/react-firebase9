@@ -24,6 +24,10 @@ const AddBook = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
+
+        if(auth.currentUser === null){
+            return
+        }
         
         const colRef = collection(db, 'books')
 
