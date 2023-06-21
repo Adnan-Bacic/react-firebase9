@@ -1,7 +1,7 @@
 import { addDoc, collection } from 'firebase/firestore';
 import React, { useState } from 'react';
+import useUser from '../hooks/useUser'
 import { db } from '../firebase/config';
-import { getAuth } from 'firebase/auth';
 import './books.css'
 
 const AddBook = () => {
@@ -10,7 +10,8 @@ const AddBook = () => {
         author: ''
     })
 
-    const auth = getAuth()
+    const user = useUser()
+    console.log(user);
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -25,7 +26,7 @@ const AddBook = () => {
     const handleSubmit = async (e) => {
         e.preventDefault()
 
-        if(auth.currentUser === null){
+        if (user.authUser === null){
             return
         }
         
@@ -35,11 +36,11 @@ const AddBook = () => {
             title: values.title,
             author: values.author,
             isFav: false,
-            userUid: auth.currentUser.uid
+            userUid: user.authUser.uid
         })
     }
 
-    if(auth.currentUser === null){
+    if (user.authUser === null){
         return(
             <p>you must be logged in to create books</p>
         )
