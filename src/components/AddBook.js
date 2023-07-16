@@ -11,7 +11,6 @@ const AddBook = () => {
     })
 
     const user = useUser()
-    console.log(user);
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
