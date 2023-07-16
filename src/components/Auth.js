@@ -32,12 +32,16 @@ const Auth = () => {
         e.preventDefault()
 
         login.loginEmailPassword(values.email, values.password)
+
+        e.target.reset()
     }
 
     const handleSignup = (e) => {
         e.preventDefault()
 
         signup.signupEmailPassword(values.email, values.password)
+
+        e.target.reset()
     }
 
     return (
