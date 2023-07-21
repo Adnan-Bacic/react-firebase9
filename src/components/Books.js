@@ -11,6 +11,9 @@ const Books = () => {
         <>
         <h2>Books</h2>
         <div className='books'>
+            {books.books.length === 0 && (
+                <p>0 books</p>
+            )}
             {books.books.map((book) => {
                 return(
                     <div key={book.id} className='book'>
@@ -23,6 +26,9 @@ const Books = () => {
         </div>
             <h2>Books where current user</h2>
             <div className='books'>
+                {books.books.length === 0 && (
+                    <p>0 books</p>
+                )}
                 {books.booksWhere.map((book) => {
                     return (
                         <div key={book.id} className='book'>

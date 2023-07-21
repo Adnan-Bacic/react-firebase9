@@ -13,6 +13,9 @@ const BooksRealtime = () => {
         <>
         <h2>Books realtime</h2>
         <div className='books'>
+                {books.books.length === 0 && (
+                    <p>0 books</p>
+                )}
             {books.books.map((book) => {
                 return (
                     <div key={book.id} className='book'>
@@ -25,6 +28,9 @@ const BooksRealtime = () => {
         </div>
             <h2>Books realtime where</h2>
             <div className='books'>
+                {books.books.length === 0 && (
+                    <p>0 books</p>
+                )}
                 {books.booksWhere.map((book) => {
                     const toggleFav = () => {
                         const docRef = doc(db, 'books', book.id)
