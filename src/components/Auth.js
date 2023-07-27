@@ -86,11 +86,15 @@ const Auth = () => {
             <button onClick={logOut}>signout</button>
             <form onSubmit={handleSignup}>
                 <h2>Signup</h2>
-                <label htmlFor="email-signup">Email:</label>
-                <input type="email" name="email" id='email-signup' onChange={handleInputChange} required />
+                <div>
+                    <label htmlFor="email-signup">Email:</label>
+                    <input type="email" name="email" id='email-signup' onChange={handleInputChange} required />
+                </div>
 
-                <label htmlFor="password-signup">Password:</label>
-                <input type="password" name="password" id='password-signup' onChange={handleInputChange} required />
+                <div>
+                    <label htmlFor="password-signup">Password:</label>
+                    <input type="password" name="password" id='password-signup' onChange={handleInputChange} required />
+                </div>
 
                 <button>Signup</button>
                 {signup.error && (
@@ -100,11 +104,15 @@ const Auth = () => {
             
             <form onSubmit={handleLogin}>
             <h2>Login</h2>
-            <label htmlFor="email-login">Email:</label>
-                <input type="email" name="email" id='email-login' onChange={handleInputChange} required />
+                <div>
+                    <label htmlFor="email-login">Email:</label>
+                    <input type="email" name="email" id='email-login' onChange={handleInputChange} required />
+                </div>
 
+                <div>
                     <label htmlFor="password-login">Password:</label>
-                <input type="password" name="password" id='password-login' onChange={handleInputChange} required />
+                    <input type="password" name="password" id='password-login' onChange={handleInputChange} required />
+                </div>
 
                 <button>Login</button>
                 {login.error && (
