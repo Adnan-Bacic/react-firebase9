@@ -5,11 +5,16 @@ import { getAuth } from 'firebase/auth'
 
 const useCollection = () => {
     const [books, setBooks] = useState([])
+    const [isLoading, setIsLoading] = useState(false)
+
     const [booksWhere, setBooksWhere] = useState([])
+    const [isLoadingWhere, setIsLoadingWhere] = useState(false)
+
 
     const useGetAll = () => {
         useEffect(() => {
             const get = async () => {
+                setIsLoading(true)
                 const colRef = collection(db, 'books')
 
                 const querySnapshot = await getDocs(colRef);
@@ -24,6 +29,7 @@ const useCollection = () => {
                 });
 
                 setBooks(docs)
+                setIsLoading(false)
             }
 
             get()
@@ -35,7 +41,9 @@ const useCollection = () => {
 
         useEffect(() => {
             const get = async () => {
+                setIsLoadingWhere(true)
                 if (auth.currentUser === null){
+                    setIsLoadingWhere(false)
                     return
                 }
 
@@ -55,6 +63,7 @@ const useCollection = () => {
                 });
 
                 setBooksWhere(docs)
+                setIsLoadingWhere(false)
             }
 
             get()
@@ -66,6 +75,8 @@ const useCollection = () => {
         books,
         useGetAllWhere,
         booksWhere,
+        isLoading,
+        isLoadingWhere
     }
 }
 

@@ -11,7 +11,10 @@ const Books = () => {
         <>
         <h2>Books</h2>
         <div className='books'>
-            {books.books.length === 0 && (
+            {books.isLoading === true && (
+                <p>loading...</p>
+            )}
+            {(books.books.length === 0) && (books.isLoading === false) && (
                 <p>0 books</p>
             )}
             {books.books.map((book) => {
@@ -26,7 +29,10 @@ const Books = () => {
         </div>
             <h2>Books where current user</h2>
             <div className='books'>
-                {books.books.length === 0 && (
+                {books.isLoadingWhere === true && (
+                    <p>loading...</p>
+                )}
+                {(books.books.length === 0) && (books.isLoadingWhere === false) && (
                     <p>0 books</p>
                 )}
                 {books.booksWhere.map((book) => {
